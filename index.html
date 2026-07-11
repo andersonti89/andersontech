@@ -24,6 +24,11 @@
     --realme:#FFA23A;
     --xiaomi:#FF7A3D;
     --iphone:#D4AF37;
+    --informatica:#5CC8FF;
+    --fones:#FF5C93;
+    --smartwatch:#7ED957;
+    --copos:#4AD6C4;
+    --eletronicos:#B79CFF;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -199,8 +204,20 @@
   .card .brand-bar{
     position:absolute; top:0; left:0; right:0; height:3px;
   }
+  .card .thumb{
+    width:100%; aspect-ratio:1/1; border-radius:10px; overflow:hidden;
+    background:var(--bg-soft); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .card .thumb img{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .card .thumb-fallback{
+    width:100%; height:100%; align-items:center; justify-content:center;
+  }
+  .card .thumb-fallback svg{width:34%; height:34%;}
   .card h3{
-    font-size:14.5px; font-weight:700; line-height:1.35; color:#fff; margin-top:6px;
+    font-size:14.5px; font-weight:700; line-height:1.35; color:#fff; margin-top:12px;
   }
   .card .specs{
     font-family:'Space Mono',monospace; font-size:11px; color:var(--text-dim); margin-top:9px;
@@ -304,7 +321,7 @@
     <div>
       <div class="hero-tag">Reposição atualizada · 07/07/2026</div>
       <h1>Aparelho novo,<br>preço de <span class="accent">quem entende.</span></h1>
-      <p>Smartphones, tablets e iPhones direto do fornecedor pra sua mão — com garantia e atendimento pelo WhatsApp.</p>
+      <p>Smartphones, tablets, iPhones e acessórios de tecnologia direto do fornecedor pra sua mão — com garantia e atendimento pelo WhatsApp.</p>
     </div>
   </div>
 </section>
@@ -320,7 +337,7 @@
   <div class="footer-inner">
     <div>
       <h4>ANDERSON TECH</h4>
-      <p>Loja de eletrônicos e informática. Reposição semanal de smartphones e tablets com procedência e melhor custo-benefício.</p>
+      <p>Loja de eletrônicos e informática. Reposição semanal de smartphones, tablets e acessórios com procedência e melhor custo-benefício.</p>
     </div>
     <div class="footer-col">
       <span>Fale com a loja</span>
@@ -428,10 +445,54 @@ const categories = [
     {name:'iPhone 17 Pro Max 2TB LL', specs:'Lacrado (LL)', colors:'Laranja', price:15000.00},
     {name:'iPhone Air 1TB LL', specs:'Lacrado (LL)', colors:'Branco / Azul', price:9375.00},
   ]},
+  { id:'informatica', name:'Informática', color:'var(--informatica)', products:[
+    {name:'SSD 480GB Sata III', specs:'Armazenamento SSD', colors:'', price:250.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F0f52c534-9944-417d-80b8-1f596e630f9f%3Fv%3D2024-12-14T04%3A58%3A24%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/kps8532-ssd-480gb-sata-iii'},
+    {name:'Case para HD 2.5" / 3.0"', specs:'Gabinete externo', colors:'', price:45.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F3cbcad04-8c67-4910-807e-9b693e97485c%3Fv%3D2024-12-14T04%3A55%3A36%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/edd7641-case-para-hd-25-30'},
+  ]},
+  { id:'fones', name:'Fones', color:'var(--fones)', products:[
+    {name:'Fone KD 791 Cancelamento de Ruído', specs:'', colors:'', price:120.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F557069b2-0d7e-40a8-a224-07ac6c349d72%3Fv%3D2024-12-14T00%3A11%3A53%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/qwg6119-fone-kd-791-cancelamento-de-ruido'},
+    {name:'Fone de Ouvido Condução Óssea', specs:'', colors:'', price:120.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fb96c6a13-f8c0-441e-ae05-39c154aa9bdb%3Fv%3D2024-12-13T17%3A32%3A16%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/rto7961-fone-de-ouvido-conducao-ossea'},
+    {name:'Fone Gamer KD 776', specs:'', colors:'', price:130.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fd1c41c74-5070-42fd-8e21-a4e08c428da3%3Fv%3D2024-12-13T17%3A30%3A30%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/nic0024-fone-gamer-kd-776'},
+    {name:'Fone Infantil', specs:'', colors:'', price:99.90, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F9989ae42-7568-40c9-afcd-4fe1765e08d1%3Fv%3D2024-12-13T17%3A25%3A01%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/klz7710-fone-infantil'},
+  ]},
+  { id:'smartwatch', name:'Smartwatch', color:'var(--smartwatch)', products:[
+    {name:'Smartwatch Irin N1 Original Xiaomi', specs:'', colors:'', price:450.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F3ec4fe00-c82c-41ec-b6cd-2c3a4400fb0b%3Fv%3D2024-12-15T14%3A51%3A51%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/qtp5411-smartwatch-irin-n1original-xiaomi'},
+    {name:'Smartwatch Ultra 10 5G Microwear', specs:'', colors:'', price:450.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F86e783a4-36dc-4ad9-b7a7-e956c43f3fbe%3Fv%3D2024-12-14T05%3A10%3A03%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/ioi6356-smartwatch-ultra-10-5g-microwear'},
+    {name:'Pulseiras Ué Ultra 2 (kit c/ 7)', specs:'', colors:'', price:260.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F71fb47a0-2881-438b-80cb-2090201c9ec1%3Fv%3D2025-01-30T08%3A13%3A30%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/sfs6116-ue-ultra-2-7-pulseiras'},
+  ]},
+  { id:'copos', name:'Copos', color:'var(--copos)', products:[
+    {name:'Garrafa Térmica', specs:'', colors:'', price:75.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F484b8140-ccaa-45ec-8e96-91dd46a49773%3Fv%3D2025-01-30T08%3A24%3A24%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/pil1506-garrafa-termica'},
+    {name:'Garrafa Café', specs:'', colors:'', price:50.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F0bdc7c7d-b25b-4788-880f-0080c36604c2%3Fv%3D2024-12-14T05%3A11%3A40%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/dch7284-garrafa-cafe'},
+  ]},
+  { id:'eletronicos', name:'Eletrônicos', color:'var(--eletronicos)', products:[
+    {name:'Carregador Portátil 30000mAh Turbo', specs:'', colors:'', price:199.99, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F57c4ff18-996e-41ef-8e32-902d17f6cb4f%3Fv%3D2025-01-30T08%3A26%3A06%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/yrv0450-carregador-portatil-30000mha-turbo'},
+    {name:'Extensor Tomada 4 USB', specs:'', colors:'', price:70.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fd5a4914a-8b35-40b4-b278-a868617351dd%3Fv%3D2025-01-30T08%3A19%3A12%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/bll9108-extensor-tomada-4-usb'},
+    {name:'Auxiliar de Partida e Compressor de Ar', specs:'Emergência automotiva', colors:'', price:420.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fa10d6373-0efd-4d56-8854-10bf776d15b2%3Fv%3D2025-01-30T08%3A15%3A48%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/zpt6761-auxiliar-de-partida-emergencia-e-compresso'},
+    {name:'Caixa de Som Xtrad', specs:'', colors:'', price:69.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fd6268534-7088-4cda-8d76-23e7d37df957%3Fv%3D2024-12-14T14%3A13%3A41%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/apb2702-caixa-de-som-xtrad'},
+    {name:'Removedor de Fiapos', specs:'', colors:'', price:49.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Ff0dd8abc-779b-45be-9995-99852f0d6f4d%3Fv%3D2024-12-14T05%3A24%3A13%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/sch9576-removedor-de-fiapos'},
+    {name:'Máquina Philips 7 em 1', specs:'', colors:'', price:199.99, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F25769daf-8441-489d-bd77-17e36999c522%3Fv%3D2024-12-14T05%3A20%3A28%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/xsq0666-maquina-philips-7em-1'},
+    {name:'Barbeador OneBlade', specs:'', colors:'', price:190.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F5b98112f-2c43-4895-ba06-ad81358f9748%3Fv%3D2024-12-14T05%3A18%3A21%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/ute8071-barbeador-oneblade'},
+    {name:'Mini Liquidificador', specs:'', colors:'', price:49.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F8ce5ad44-1f61-4d86-9d87-eb60c61a910b%3Fv%3D2024-12-14T05%3A04%3A17%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/bkg7043-mini-iquidificador'},
+    {name:'Câmera Intelbras', specs:'', colors:'', price:299.99, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Ff8aa1dda-e25d-4625-8c0e-3e8918142f72%3Fv%3D2024-12-14T00%3A08%3A45%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/xsx6666-camera-intelbras'},
+    {name:'Caixa de Som Bluetooth Karaoke', specs:'', colors:'', price:90.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F9acfb19f-45b3-4175-9f92-c30ade1f9540%3Fv%3D2024-12-13T17%3A28%3A12%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/lpy9276-caixa-de-som-bluetooth-karaoke'},
+    {name:'Marmita Elétrica', specs:'', colors:'', price:90.00, img:'https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F595d002b-b47a-4667-890c-5d4f27ec384c%3Fv%3D2024-12-13T17%3A25%3A50%2B00%3A00', buyUrl:'https://loja.infinitepay.io/andersontech89/qxf9798-marmita-eletrica'},
+  ]},
 ];
 
 const fmt = v => v.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
 const totalProducts = categories.reduce((a,c)=>a+c.products.length,0);
+
+function slugify(str){
+  return str.toString().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9]+/g,'-')
+    .replace(/(^-|-$)/g,'');
+}
+function imgPath(catId, p){
+  if(p.img) return p.img;
+  const color = p.colors ? p.colors.split('/')[0].trim() : '';
+  return `images/${slugify(catId + '-' + p.name + (color ? '-' + color : ''))}.jpg`;
+}
 
 const catnav = document.getElementById('catnav');
 const catalog = document.getElementById('catalog');
@@ -487,14 +548,26 @@ categories.forEach(cat=>{
     card.dataset.search = (p.name + ' ' + p.colors + ' ' + cat.name).toLowerCase();
     card.innerHTML = `
       <div class="brand-bar" style="background:${cat.color}"></div>
+      <div class="thumb">
+        <img src="${imgPath(cat.id, p)}" alt="${p.name}" loading="lazy" referrerpolicy="no-referrer"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="thumb-fallback" style="background:linear-gradient(135deg, ${cat.color}22, ${cat.color}0D); display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="${cat.color}" stroke-width="1.4"><rect x="7" y="2" width="10" height="20" rx="2.2"/><line x1="11" y1="18.2" x2="13" y2="18.2"/></svg>
+        </div>
+      </div>
       <h3>${p.name}</h3>
       ${p.specs ? `<div class="specs">${p.specs}</div>` : ''}
       ${p.colors ? `<div class="colors">Cores: ${p.colors}</div>` : ''}
       <div class="pricerow">
         <div class="price"><small>à vista</small>R$ ${fmt(p.price)}</div>
-        <a class="buy" href="${waLink(p.name, p.price)}" target="_blank" rel="noopener" aria-label="Comprar via WhatsApp">
-          <svg viewBox="0 0 24 24" fill="#06210F"><path d="M17.6 6.3A8.9 8.9 0 0 0 3.3 17L2 22l5.2-1.4A8.9 8.9 0 1 0 17.6 6.3ZM12 20.4a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.8.8-2.7-.2-.3A7.5 7.5 0 1 1 12 20.4Zm4.1-5.6c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.5.1-.6.7-.7.9-.3.2-.5.1a6.1 6.1 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.2-1.5c-.1-.2 0-.4.1-.5l.4-.4a1.6 1.6 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5s1.7 2.7 4.2 3.7a5.1 5.1 0 0 0 3 .6 2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c-.1-.1-.2-.2-.4-.3Z"/></svg>
-        </a>
+        ${p.buyUrl
+          ? `<a class="buy" href="${p.buyUrl}" target="_blank" rel="noopener" aria-label="Comprar agora">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#06210F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+             </a>`
+          : `<a class="buy" href="${waLink(p.name, p.price)}" target="_blank" rel="noopener" aria-label="Comprar via WhatsApp">
+              <svg viewBox="0 0 24 24" fill="#06210F"><path d="M17.6 6.3A8.9 8.9 0 0 0 3.3 17L2 22l5.2-1.4A8.9 8.9 0 1 0 17.6 6.3ZM12 20.4a7.4 7.4 0 0 1-3.8-1l-.3-.2-2.8.8.8-2.7-.2-.3A7.5 7.5 0 1 1 12 20.4Zm4.1-5.6c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.5.1-.6.7-.7.9-.3.2-.5.1a6.1 6.1 0 0 1-1.8-1.1 6.8 6.8 0 0 1-1.2-1.5c-.1-.2 0-.4.1-.5l.4-.4a1.6 1.6 0 0 0 .2-.4.4.4 0 0 0 0-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5s1.7 2.7 4.2 3.7a5.1 5.1 0 0 0 3 .6 2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c-.1-.1-.2-.2-.4-.3Z"/></svg>
+             </a>`
+        }
       </div>
     `;
     grid.appendChild(card);
@@ -525,6 +598,5 @@ search.addEventListener('input', ()=>{
   empty.style.display = (q!=='' && visibleTotal===0) ? 'block' : 'none';
 });
 </script>
-
 </body>
 </html>
